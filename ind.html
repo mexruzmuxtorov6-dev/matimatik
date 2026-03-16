@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feruza Eshimova | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0f172a;
+            --sidebar-bg: #3d3434; /* Rasmdagi menyu foni */
+            --accent-gold: #fdbb2d;
+            --active-green: #34a853;
+            --glass: rgba(255, 255, 255, 0.08);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #1e293b, #0f172a);
+            background-attachment: fixed;
+            color: #f1f5f9;
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* --- SIDEBAR (Rasmga mos) --- */
+        nav {
+            width: 280px;
+            background: var(--sidebar-bg);
+            height: 100vh;
+            position: fixed;
+            padding-top: 40px;
+            box-shadow: 5px 0 20px rgba(0,0,0,0.5);
+            z-index: 1000;
+        }
+
+        nav a {
+            display: block;
+            padding: 20px 30px;
+            color: #cbd5e1;
+            text-decoration: none;
+            font-size: 1rem;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            transition: 0.3s;
+            border-left: 6px solid transparent;
+        }
+
+        nav a.active, nav a:hover {
+            background: rgba(255,255,255,0.1);
+            color: white;
+            border-left: 6px solid var(--active-green);
+        }
+
+        /* --- CONTENT AREA --- */
+        main {
+            margin-left: 280px;
+            width: calc(100% - 280px);
+            padding: 50px;
+        }
+
+        /* PROFIL RASMI VA ISMI (Siz xohlagan joy) */
+        .header-section {
+            background: var(--glass);
+            backdrop-filter: blur(15px);
+            padding: 50px;
+            border-radius: 30px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.1);
+            margin-bottom: 40px;
+        }
+
+        .profile-img-box {
+            width: 200px;
+            height: 280px;
+            margin: 0 auto 25px;
+            border-radius: 15px;
+            border: 5px solid var(--accent-gold);
+            padding: 5px;
+            box-shadow: 0 0 30px rgba(253, 187, 45, 0.4);
+            background: #fff;
+            overflow: hidden;
+        }
+
+        .profile-img-box img { width: 100%; height: 100%; border-radius: 15px; object-fit: cover; }
+
+        h1 { font-family: 'Playfair Display', serif; font-size: 3rem; letter-spacing: 2px; }
+        .shior { font-style: italic; color: var(--accent-gold); font-size: 1.3rem; margin-top: 20px; }
+
+        .card {
+            background: var(--glass);
+            padding: 40px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        h2 { color: var(--accent-gold); margin-bottom: 25px; border-bottom: 2px solid rgba(253, 187, 45, 0.2); display: inline-block; }
+
+        /* JADVAL */
+        .table-responsive { overflow-x: auto; margin-top: 20px; }
+        table { width: 100%; border-collapse: collapse; font-size: 0.9rem; background: rgba(0,0,0,0.3); }
+        th, td { padding: 15px; border: 1px solid rgba(255,255,255,0.1); text-align: left; }
+        th { background: rgba(253, 187, 45, 0.2); color: var(--accent-gold); }
+
+        /* --- MOBILE RESPONSIVE --- */
+        @media (max-width: 1024px) {
+            nav {
+                width: 100%;
+                height: auto;
+                position: relative;
+                padding-top: 20px;
+                padding-bottom: 20px;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+            }
+
+            nav a {
+                padding: 12px 15px;
+                font-size: 0.9rem;
+                border-bottom: none;
+                border-left: none;
+                border-bottom: 2px solid transparent;
+            }
+
+            nav a.active, nav a:hover {
+                border-bottom: 2px solid var(--active-green);
+                border-left: none;
+            }
+
+            main {
+                margin-left: 0;
+                width: 100%;
+                padding: 30px 20px;
+            }
+
+            body {
+                flex-direction: column;
+            }
+
+            .header-section {
+                padding: 30px 20px;
+            }
+
+            .profile-img-box {
+                width: 140px;
+                height: 200px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .shior {
+                font-size: 1rem;
+            }
+
+            .card {
+                padding: 25px 15px;
+            }
+
+            table {
+                font-size: 0.75rem;
+            }
+
+            th, td {
+                padding: 10px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+            }
+
+            nav a {
+                padding: 15px 20px;
+                border-bottom: 1px solid rgba(255,255,255,0.05);
+            }
+
+            main {
+                padding: 20px 15px;
+            }
+
+            .header-section {
+                padding: 25px 15px;
+                border-radius: 20px;
+            }
+
+            .profile-img-box {
+                width: 120px;
+                height: 170px;
+                margin: 0 auto 20px;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+                letter-spacing: 1px;
+            }
+
+            .shior {
+                font-size: 0.9rem;
+            }
+
+            .card {
+                padding: 20px 12px;
+                margin-bottom: 20px;
+            }
+
+            h2 {
+                font-size: 1.3rem;
+            }
+
+            p {
+                font-size: 0.95rem;
+            }
+
+            table {
+                font-size: 0.7rem;
+                width: 100%;
+            }
+
+            th, td {
+                padding: 8px;
+            }
+
+            .table-responsive {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            table th:nth-child(n+3),
+            table td:nth-child(n+3) {
+                display: none;
+            }
+
+            table th:after {
+                content: " — Nashr";
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav a {
+                padding: 12px 15px;
+                font-size: 0.85rem;
+            }
+
+            main {
+                padding: 15px 10px;
+            }
+
+            .header-section {
+                padding: 20px 10px;
+                margin-bottom: 20px;
+            }
+
+            .profile-img-box {
+                width: 100px;
+                height: 140px;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+                letter-spacing: 0px;
+            }
+
+            .shior {
+                font-size: 0.8rem;
+            }
+
+            .card {
+                padding: 15px 10px;
+            }
+
+            h2 {
+                font-size: 1.1rem;
+            }
+
+            p {
+                font-size: 0.9rem;
+                line-height: 1.5;
+            }
+
+            table {
+                font-size: 0.65rem;
+            }
+
+            th, td {
+                padding: 6px;
+            }
+
+            footer {
+                font-size: 0.75rem !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#" class="active">Bosh sahifa</a>
+        <a href="#about">Men haqimda</a>
+        <a href="#lessons">Darslar</a>
+        <a href="#works">Ilmiy ishlar</a>
+        <a href="#contact">Aloqa</a>
+    </nav>
+
+    <main>
+        <section class="header-section">
+            <div class="profile-img-box">
+                <img src="photo_2026-02-10_10-42-39.jpg" alt="Qalandarova Maxliyo Aslonovna">
+            </div>
+            <h1>Qalandarova Maxliyo Aslonovna</h1>
+            <p style="text-transform: uppercase; letter-spacing: 4px; opacity: 0.8; margin-top: 10px;">Matematika fani o'qituvchisi</p>
+            <p class="shior">"Matematikani bilgan inson, muammoni yengadi."</p>
+        </section>
+
+        <section id="about" class="card">
+            <h2>🎓 Men haqimda</h2>
+            <div style="line-height: 1.8;">
+                <p><strong>Ta'lim:</strong></p>
+                <p>• 2003 — 2007: Samarqand Davlat Universiteti mexanika-matematika fakulteti talabasi.</p>
+                <p>• 2007 — 2009: Samarqand Davlat Universitetining "Matematik analiz" kafedrasi magistri.</p>
+                <br>
+                <p><strong>Ilmiy unvon:</strong> "Iqtisodiyot va muhandislik fanlari" kafedrasi assistenti.</p>
+                <br>
+                <p><strong>Ish tajribasi:</strong> 2003 yildan hozirga qadar ta'lim tizimida faoliyat yuritib kelmoqdaman.</p>
+                <br>
+                <p><strong>Ilmiy faoliyat:</strong></p>
+                <p style="background: rgba(253,187,45,0.1); padding: 15px; border-radius: 10px;">
+                    "O'zgarmaydi. O'qituvchilik yondashuvim o'zgarmaydi."
+                </p>
+            </div>
+        </section>
+
+        <section id="works" class="card">
+            <h2>🔬 Chop etilgan ilmiy ishlar</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>№</th>
+                            <th>Ishning nomi</th>
+                            <th>Nashr ma'lumotlari</th>
+                            <th>Hajm</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>2</td><td>Formation of financial literacy of students in the process of teaching mathematics-time requirement</td><td>Academia An International Multidisciplinary Research Journal. Vol.10 Issue 11, November 2020, 555-561 betlar</td><td>7 bet</td></tr>
+                        <tr><td>3</td><td>Matematika o'qitish jarayonida o'quvchilar moliyaviy savodxonligini shakllantirishda amaliy mazmunli masalalardan foydalanish</td><td>SamDU ilmiy axborotnomasi. 6-son Samarqand, 2024 y., 19-24 betlar</td><td>6 bet</td></tr>
+                        <tr><td>4</td><td>Moliyaviy savodxonlikka o'rgatishda o'quvchilarning o'quv bilish faoliyatini faollashtirish</td><td>Ijtimoiy-gumanitar fanlarning dolzarb muammolari el.jurnal. №6, Toshkent 2024 y., 233-238 bet</td><td>6 bet</td></tr>
+                        <tr><td>5</td><td>Umumta'lim maktablarida matematika darslarida o'quvchilarning moliyaviy savodxonligini rivojlantirish shakllari va usullari</td><td>Ijtimoiy-gumanitar fanlarning dolzarb muammolari el.jurnal. №9, Toshkent 2024 y., 394-399 bet</td><td>6 bet</td></tr>
+                        <tr><td>6</td><td>Maktab o'quvchilarida moliyaviy savodxonlikni rivojlantirishda matematika darsining imkoniyatlaridan foydalanish</td><td>O'zR fanlar akademiyasi mintaqaviy bo'limi Xorazm Ma'mun akademiyasi axborotnomasi. 1-son, Xorazm, 2025 y., 96-99 betlar</td><td>4 bet</td></tr>
+                        <tr><td>7</td><td>Matematika o'qitish jarayonida integrativ yondashuv asosida 5-9-sinf o'quvchilarining moliyaviy savodxonligini shakllantirish</td><td>"Pedagogik mahorat" ilmiy-nazariy metodik jurnal, BuxDU 2025, №1, 130-134 bet</td><td>5 bet</td></tr>
+                        <tr><td>8</td><td>Maktab o'quvchilarida moliyaviy savodxonlikni rivojlantirishda matematika darsining imkoniyatlaridan foydalanish</td><td>FMI ilmiy-uslubiy jurnali, Toshkent, 2025, №2, 155-161 betlar</td><td>7 bet</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <footer style="text-align: center; opacity: 0.5; padding: 20px;">
+            &copy;  Barcha ma'lumotlar rasmlar asosida kiritildi.
+        </footer>
+    </main>
+
+</body>
+</html>
